@@ -4,15 +4,17 @@ import SunIcon from "./sun1.svg";
 import CloudIcon from "./cloudsunny.svg";
 
 const Weather = () => {
-  const [weatherData, setWeatherData] = useState({
-    city: "Dubai",
-    temprature: "26",
-    humidity: "75",
-    windSpeed: "4.5",
-    condition: "Sunny",
-  });
+  const [weatherData, setWeatherData] = useState(
+    JSON.parse(localStorage.getItem("weatherData")) || {
+      city: "Dubai",
+      temprature: "26",
+      humidity: "75",
+      windSpeed: "4.5",
+      condition: "Sunny",
+    }
+  );
   const [searchInput, setSearchInput] = useState({
-    search: "Dubai",
+    search: "",
   });
 
   const handleChange = (event) => {
@@ -25,7 +27,6 @@ const Weather = () => {
   };
 
   const submit = (event) => {
-    event.preventDefault();
     setSearchInput({
       search: "",
     });
@@ -36,6 +37,8 @@ const Weather = () => {
   const apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${searchInput.search}&appid=${apiKey}&units=metric`;
 
   useEffect(() => {
+    localStorage.setItem("weatherData", JSON.stringify(weatherData));
+
     fetch(apiUrl)
       .then((respose) => respose.json())
       .then((data) => {
