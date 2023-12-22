@@ -72,7 +72,7 @@ const Weather = () => {
 
   return (
     <div className="Weather-container">
-      <form onSubmit={submit} action="">
+      <form onSubmit={handleChange} action="">
         <input
           type="search"
           placeholder="Search..."
@@ -80,7 +80,7 @@ const Weather = () => {
           value={searchInput.search}
           onChange={handleChange}
         />
-        <img src={SeacrchIcon} alt="" />
+        <img onClick={submit} src={SeacrchIcon} alt="" />
       </form>
 
       <div className="text-and-details">

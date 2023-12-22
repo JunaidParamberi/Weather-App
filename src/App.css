@@ -52,6 +52,7 @@ body{
 
 .Weather-container form img{
   display: flex;
+  cursor: pointer;
 
  
 
