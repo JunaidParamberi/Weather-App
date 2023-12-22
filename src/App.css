@@ -1,0 +1,126 @@
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+ 
+}
+
+body{
+  background: url(https://images.pexels.com/photos/2115367/pexels-photo-2115367.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2);
+  background-repeat: no-repeat;
+  background-position: center;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  font-family: 'Poppins', sans-serif;
+}
+
+
+.Weather-container{
+  border-radius: 55px;
+  opacity: 0.8;
+  background-color: rgba(0, 0, 0, 0.8) ;
+  padding: 50px 50px;
+}
+
+.Weather-container form{
+  display: flex;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.Weather-container input {
+  border-radius: 55px;
+  /* opacity: 0.3; */
+  background: linear-gradient(0deg, rgba(0, 0, 0, 0.10) 0%, rgba(0, 0, 0, 0.10) 100%), #585858;
+  border: none;
+  /* padding: 20px 20px ; */
+  outline: none;
+  color: rgb(0, 0, 0);
+  min-width: 300px;
+  font-size: 15px;
+  position: relative;
+  padding: 0px 20px;
+  height: 55px;
+ margin-right: 10px;
+}
+
+
+
+
+.Weather-container form img{
+  display: flex;
+
+ 
+
+}
+
+.text-and-details h1{
+  color: rgba(249, 249, 249, 0.98);
+  text-align: left;
+  font-family: Poppins;
+  font-size: 40px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: normal;
+}
+
+
+.text-and-details{
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+
+}
+
+.text-and-details h2{
+  color: rgba(249, 249, 249, 0.98);
+  text-align: center;
+  font-family: Poppins;
+  font-size: 50px;
+  font-style: normal;
+  font-weight: 800;
+  line-height: normal;
+}
+
+
+.weather{
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  margin-bottom: 10px;
+}
+
+.weather img{
+  width: 35px;
+  height: 35px;
+}
+
+.weather p{
+  color: rgba(249, 249, 249, 0.98);
+  text-align: center;
+  font-family: Poppins;
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 500;
+ 
+}
+
+/* .Weather-container p {
+  margin-bottom: 10px;
+} */
+
+@media screen and  (max-width : 720px) {
+
+  .Weather-container h1 {
+    font-size: 20px;
+  }
+
+  .Weather-container input {
+    min-width: 100px;
+  }
+  
+}
