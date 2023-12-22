@@ -114,6 +114,21 @@ body{
   margin-bottom: 10px;
 } */
 
+
+.date-and-time p {
+  font-size: 15px;
+  font-weight: 200;
+}
+.date-and-time :nth-child(2) {
+  font-size: 20px;
+  font-weight: 500;
+}
+
+.date-and-time{
+  margin-bottom: 20px;
+  margin-left: 5px;
+}
+
 @media screen and  (max-width : 720px) {
 
   .Weather-container h1 {

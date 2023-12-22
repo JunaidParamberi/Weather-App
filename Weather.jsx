@@ -70,8 +70,41 @@ const Weather = () => {
       });
   }, [searchInput, apiUrl]);
 
+  const [currentDateTime, setCurrentDateTime] = useState(new Date());
+
+  useEffect(() => {
+    const interValID = setInterval(() => {
+      setCurrentDateTime(new Date());
+    }, 1000);
+
+    return () => clearInterval(interValID);
+  }, []);
+
+  const dateOptions = {
+    weekday: "long",
+    year: "numeric",
+    month: "long",
+    day: "numeric",
+  };
+
+  const timeOptions = {
+    hour: "numeric",
+    minute: "numeric",
+  };
+
+  const formattedDate = currentDateTime.toLocaleDateString(
+    "en-US",
+    dateOptions
+  );
+
+  const formateTime = currentDateTime.toLocaleTimeString("en-US", timeOptions);
+
   return (
     <div className="Weather-container">
+      <div className="date-and-time">
+        <p>{formattedDate}</p>
+        <p>{formateTime}</p>
+      </div>
       <form onSubmit={handleChange} action="">
         <input
           type="search"
